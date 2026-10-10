@@ -1,21 +1,43 @@
 <?php
-$mahasiswa = [
-    ["Name" => "Alex",    "NIM" => "2204010812345678", "Mobile" => "0812345678"],
-    ["Name" => "Bianca",  "NIM" => "2204020812345687", "Mobile" => "0812345687"],
-    ["Name" => "Candice", "NIM" => "2204030812345665", "Mobile" => "0812345665"],
-    ["Name" => "Diana",   "NIM" => "2204040812345601", "Mobile" => "0812345601"],
-    ["Name" => "Ethan",   "NIM" => "2204050812345602", "Mobile" => "0812345602"],
-    ["Name" => "Fiona",   "NIM" => "2204060812345603", "Mobile" => "0812345603"],
-    ["Name" => "George",  "NIM" => "2204070812345604", "Mobile" => "0812345604"],
-    ["Name" => "Hannah",  "NIM" => "2204080812345605", "Mobile" => "0812345605"],
+$students = [
+    ["Alex", "220401", "0812345678"],
+    ["Bianca", "220402", "0812345678"],
+    ["Candice", "220403", "0812345665"]
 ];
+
+function tampilkanData($data) {
+    echo "students = (<br>";
+    foreach ($data as $siswa) {
+        echo '("' . implode('", "', $siswa) . '"),<br>';
+    }
+    echo ")<br>";
+}
+
+echo "Data awal:<br>";
+tampilkanData($students);
+
+$students[] = ["Daniel", "220404", "0812345611"];
+$students[] = ["Elena", "220405", "0812345622"];
+$students[] = ["Fiona", "220406", "0812345633"];
+$students[] = ["Gabe", "220407", "0812345644"];
+$students[] = ["Hannah", "220408", "0812345655"];
+
+echo "<br>Data setelah ditambah 5 data lain:<br>";
+tampilkanData($students);
+
+echo "<br>";
 echo "<table border='1' cellpadding='5' cellspacing='0'>";
-echo "<tr><th>Name</th><th>NIM</th><th>Mobile</th></tr>";
-foreach ($mahasiswa as $m) {
+echo "<tr>";
+echo "<th>Name</th>";
+echo "<th>NIM</th>";
+echo "<th>Mobile</th>";
+echo "</tr>";
+
+foreach ($students as $siswa) {
     echo "<tr>";
-    echo "<td>" . $m["Name"] . "</td>";
-    echo "<td>" . $m["NIM"] . "</td>";
-    echo "<td>" . $m["Mobile"] . "</td>";
+    echo "<td>" . $siswa[0] . "</td>";
+    echo "<td>" . $siswa[1] . "</td>";
+    echo "<td>" . $siswa[2] . "</td>";
     echo "</tr>";
 }
 echo "</table>";
